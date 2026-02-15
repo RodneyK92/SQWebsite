@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title id="pageTitle">Website</title>
+    <meta id="pageDesc" name="description" content="" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="brand" href="#top" id="brandName">Brand</a>
+
+        <nav class="nav__links" id="navLinks" aria-label="Primary navigation"></nav>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+          ☰
+        </button>
+      </div>
+      <div class="nav__mobile container" id="navMobile" hidden></div>
+    </header>
+
+    <!-- HERO -->
+    <main id="top">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__text">
+            <p class="badge" id="heroBadge">Badge</p>
+            <h1 id="heroHeadline">Headline</h1>
+            <p class="subhead" id="heroSubhead">Subhead</p>
+
+            <div class="cta">
+              <a class="btn btn--primary" id="primaryCta" href="#">Primary</a>
+              <a class="btn btn--ghost" id="secondaryCta" href="#">Secondary</a>
+            </div>
+
+            <div class="stats" id="stats"></div>
+          </div>
+
+          <div class="hero__card">
+            <div class="card">
+              <h2 class="card__title" id="cardTitle">Featured</h2>
+              <p class="card__text" id="cardText">Card text</p>
+
+              <div class="card__list" id="cardList"></div>
+
+              <a class="btn btn--small" id="cardButton" href="#">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTIONS -->
+      <section class="section" id="about">
+        <div class="container">
+          <h2 class="section__title">About</h2>
+          <p class="section__text" id="aboutText"></p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="work">
+        <div class="container">
+          <h2 class="section__title">Work</h2>
+          <div class="grid" id="workGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <h2 class="section__title">Services</h2>
+          <div class="grid" id="servicesGrid"></div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="contact">
+        <div class="container">
+          <h2 class="section__title">Contact</h2>
+          <p class="section__text" id="contactText"></p>
+          <div class="contact__buttons" id="contactButtons"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p id="footerText">©</p>
+        <div class="social" id="socialLinks"></div>
+      </div>
+    </footer>
+
+    <script src="./site.config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
