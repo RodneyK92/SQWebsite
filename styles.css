@@ -98,15 +98,42 @@ h1 { margin: 14px 0 10px; font-size: clamp(32px, 4vw, 54px); line-height: 1.05; 
   cursor: pointer;
   position: relative;
 }
+/* Album cover tiles — mixed orientation friendly */
+.gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Use aspect-ratio so every album cover tile stays consistent */
+.album {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+/* The tile maintains a consistent shape; image crops to fit */
 .album__img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;         /* consistent cover tile shape */
+  height: auto;                 /* let aspect-ratio control height */
+  object-fit: cover;            /* crops but looks clean */
+  object-position: 50% 35%;     /* slightly higher framing helps portraits */
   display: block;
   filter: saturate(1.02);
   transform: scale(1);
   transition: transform 220ms ease;
 }
+
+.album:hover .album__img { transform: scale(1.03); }
+
+@media (max-width: 900px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .album__img { aspect-ratio: 3 / 2; } /* more cinematic on mobile */
+}
+
 .album:hover .album__img { transform: scale(1.03); }
 
 .album__overlay {
