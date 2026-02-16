@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title id="pageTitle">Website</title>
+    <title id="pageTitle">Photography</title>
     <meta id="pageDesc" name="description" content="" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -11,29 +11,29 @@
     <!-- NAV -->
     <header class="nav">
       <div class="container nav__inner">
-        <a class="brand" href="#top" id="brandName">Brand</a>
+        <a class="brand" href="#home" id="brandName">Brand</a>
 
         <nav class="nav__links" id="navLinks" aria-label="Primary navigation"></nav>
 
-        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-          ☰
-        </button>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">☰</button>
       </div>
+
       <div class="nav__mobile container" id="navMobile" hidden></div>
     </header>
 
-    <!-- HERO -->
-    <main id="top">
-      <section class="hero">
+    <!-- MAIN -->
+    <main id="app">
+      <!-- HOME -->
+      <section class="hero page" id="page-home" data-page="home">
         <div class="container hero__grid">
           <div class="hero__text">
-            <p class="badge" id="heroBadge">Badge</p>
+            <p class="badge" id="heroBadge">Gallery</p>
             <h1 id="heroHeadline">Headline</h1>
             <p class="subhead" id="heroSubhead">Subhead</p>
 
             <div class="cta">
-              <a class="btn btn--primary" id="primaryCta" href="#">Primary</a>
-              <a class="btn btn--ghost" id="secondaryCta" href="#">Secondary</a>
+              <button class="btn btn--primary" id="primaryCta" type="button">View</button>
+              <button class="btn btn--ghost" id="secondaryCta" type="button">Services</button>
             </div>
 
             <div class="stats" id="stats"></div>
@@ -43,45 +43,95 @@
             <div class="card">
               <h2 class="card__title" id="cardTitle">Featured</h2>
               <p class="card__text" id="cardText">Card text</p>
-
               <div class="card__list" id="cardList"></div>
-
               <a class="btn btn--small" id="cardButton" href="#">Learn more</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTIONS -->
-      <section class="section" id="about">
+      <!-- GALLERY PAGES -->
+      <section class="section page" id="page-portraits" data-page="portraits">
         <div class="container">
-          <h2 class="section__title">About</h2>
-          <p class="section__text" id="aboutText"></p>
+          <div class="pagehead">
+            <h2 class="section__title" id="portraitsTitle">Portraits</h2>
+            <p class="section__text" id="portraitsSubtitle"></p>
+          </div>
+          <div class="grid gallery-grid" id="portraitsGrid"></div>
         </div>
       </section>
 
-      <section class="section section--alt" id="work">
+      <section class="section page" id="page-travels" data-page="travels">
         <div class="container">
-          <h2 class="section__title">Work</h2>
-          <div class="grid" id="workGrid"></div>
+          <div class="pagehead">
+            <h2 class="section__title" id="travelsTitle">Travels</h2>
+            <p class="section__text" id="travelsSubtitle"></p>
+          </div>
+          <div class="grid gallery-grid" id="travelsGrid"></div>
         </div>
       </section>
 
-      <section class="section" id="services">
+      <section class="section page" id="page-events" data-page="events">
         <div class="container">
-          <h2 class="section__title">Services</h2>
+          <div class="pagehead">
+            <h2 class="section__title" id="eventsTitle">Events</h2>
+            <p class="section__text" id="eventsSubtitle"></p>
+          </div>
+          <div class="grid gallery-grid" id="eventsGrid"></div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section section--alt page" id="page-services" data-page="services">
+        <div class="container">
+          <div class="pagehead">
+            <h2 class="section__title" id="servicesTitle">Services</h2>
+            <p class="section__text" id="servicesSubtitle"></p>
+          </div>
+
           <div class="grid" id="servicesGrid"></div>
+
+          <div class="contact__buttons" id="servicesButtons"></div>
         </div>
       </section>
 
-      <section class="section section--alt" id="contact">
+      <!-- CONTACT -->
+      <section class="section page" id="page-contact" data-page="contact">
         <div class="container">
-          <h2 class="section__title">Contact</h2>
-          <p class="section__text" id="contactText"></p>
+          <div class="pagehead">
+            <h2 class="section__title" id="contactTitle">Contact</h2>
+            <p class="section__text" id="contactText"></p>
+          </div>
           <div class="contact__buttons" id="contactButtons"></div>
         </div>
       </section>
     </main>
+
+    <!-- LIGHTBOX (album viewer) -->
+    <div class="lightbox" id="lightbox" hidden>
+      <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+
+      <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Gallery viewer">
+        <div class="lightbox__top">
+          <div class="lightbox__meta">
+            <strong id="lightboxTitle">Set Title</strong>
+            <span id="lightboxSub">Location • Date</span>
+          </div>
+
+          <div class="lightbox__actions">
+            <button class="iconbtn" id="prevBtn" type="button" aria-label="Previous photo">←</button>
+            <button class="iconbtn" id="nextBtn" type="button" aria-label="Next photo">→</button>
+            <button class="iconbtn" id="closeBtn" type="button" aria-label="Close">✕</button>
+          </div>
+        </div>
+
+        <div class="lightbox__body">
+          <img id="lightboxImg" alt="Gallery photo" />
+        </div>
+
+        <div class="lightbox__thumbs" id="lightboxThumbs"></div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="container footer__inner">
