@@ -1,7 +1,7 @@
 window.SITE = {
-  brand: "Rodney Kono",
+  brand: "Herve Claude",
   seo: {
-    title: "Rodney Kono | Photography",
+    title: "Herve Claude | Photography",
     description: "Portraits, travel, and events — click a cover to view full sets."
   },
 
